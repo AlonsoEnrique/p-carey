@@ -4,8 +4,8 @@ from sea import Sea
 
 
 def main():
-    window = Sea()
-    window.setup()
+    sea_window = Sea()
+    sea_window.setup()
     arcade.run()
 
 
