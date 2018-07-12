@@ -22,7 +22,7 @@ class Sea(arcade.Window):
         self.natural_sounds = None
 
     def setup(self):
-        self.natural_sounds = arcade.load_sound('sounds/aaah.mp3')
+        self.natural_sounds = arcade.load_sound('sounds/mainmenu.mp3')
         arcade.play_sound(self.natural_sounds)
 
         # GET this value from API in the cloud
@@ -54,7 +54,13 @@ class Sea(arcade.Window):
 
         self.enough_hunting_dives()
 
-        # self.turtle.movement()
+        self.turtle.update(delta_time)
+
+    def on_key_press(self, symbol: int, modifiers: int):
+        self.turtle.on_key_press(symbol=symbol, modifiers=modifiers)
+
+    def on_key_release(self, key: int, modifiers: int):
+        self.turtle.on_key_release(key=key, modifiers=modifiers)
 
     def game_over(self):
         """
